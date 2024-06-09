@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "mpuxx50.h": "c",
+        "stdint.h": "c",
+        "compare": "c",
+        "math.h": "c"
+    }
+}
