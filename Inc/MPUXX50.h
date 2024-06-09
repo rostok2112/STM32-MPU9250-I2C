@@ -77,6 +77,8 @@ extern uint8_t _addr;
 extern float _dt, _tau;
 extern float aScaleFactor, gScaleFactor;
 
+extern uint8_t isMPU9250;
+
 // Functions
 uint8_t MPU_begin(I2C_HandleTypeDef *I2Cx, uint8_t addr, uint8_t aScale, uint8_t gScale, float tau, float dt);
 void MPU_calibrateGyro(I2C_HandleTypeDef *I2Cx, uint16_t numCalPoints);

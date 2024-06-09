@@ -41,8 +41,10 @@ uint8_t MPU_begin(I2C_HandleTypeDef *I2Cx, uint8_t addr, uint8_t aScale, uint8_t
     // Confirm device
     HAL_I2C_Mem_Read(I2Cx, _addr, WHO_AM_I, 1, &check, 1, I2C_TIMOUT_MS);
 
+
     // TODO: If 9250 or 6050 fails could it trigger the opposite check???
-    if ((check == WHO_AM_I_9250_ANS) || (check == WHO_AM_I_6050_ANS))
+    isMPU9250 = check == WHO_AM_I_9250_ANS;
+    if (isMPU9250 || (check == WHO_AM_I_6050_ANS))
     {
         // Startup / reset the sensor
         select = 0x00;
