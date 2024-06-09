@@ -1,5 +1,3 @@
-# macOS
-.DS_Store
 
 # Various STM32CubeIDE build and user files
 *.o 
@@ -11,14 +9,7 @@
 *.su
 
 # Release and Debug Folders
-C/SPI/Release 
-C/SPI/Debug
 
-C/I2C/Release 
-C/I2C/Debug
+Release 
+Debug
 
-CPP/SPI/Release
-CPP/SPI/Debug
-
-CPP/I2C/Release
-CPP/I2C/Debug
