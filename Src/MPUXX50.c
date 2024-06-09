@@ -7,6 +7,19 @@
 
 #include "MPUXX50.h"
 
+// Variables
+RawData rawData;
+SensorData sensorData;
+GyroCal gyroCal;
+Attitude attitude;
+uint8_t _addr;
+float _dt, _tau;
+float aScaleFactor, gScaleFactor;
+
+uint8_t isMPU9250;
+
+// Functions
+
 /// @brief Set the IMU address, check for connection, reset IMU, and set full range scale.
 /// @param I2Cx Pointer to I2C structure config.
 /// @param addr Hex address based on AD0 pin - 0x68 low or 0x69 high.

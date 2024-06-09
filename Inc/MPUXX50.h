@@ -9,9 +9,9 @@
 #define MPUXX50_H_
 
 // Libs
+#include "main.h"
 #include <stdint.h>
 #include <math.h>
-#include "I2C.h"
 
 // Constants
 #define RAD2DEG 57.2957795131
@@ -46,30 +46,36 @@ enum accelerometerFullScaleRange
 };
 
 // Structures
-struct RawData
+typedef struct
 {
     int16_t ax, ay, az, gx, gy, gz;
-} rawData;
+} RawData;
 
-struct SensorData
+typedef struct SensorData
 {
     float ax, ay, az, gx, gy, gz;
-} sensorData;
+} SensorData;
 
-struct GyroCal
+typedef struct
 {
     float x, y, z;
-} gyroCal;
+} GyroCal;
 
-struct Attitude
+typedef struct
 {
     float r, p, y;
-} attitude;
+} Attitude;
+
 
 // Variables
-uint8_t _addr;
-float _dt, _tau;
-float aScaleFactor, gScaleFactor;
+extern RawData rawData;
+extern SensorData sensorData;
+extern GyroCal gyroCal;
+extern Attitude attitude;
+
+extern uint8_t _addr;
+extern float _dt, _tau;
+extern float aScaleFactor, gScaleFactor;
 
 // Functions
 uint8_t MPU_begin(I2C_HandleTypeDef *I2Cx, uint8_t addr, uint8_t aScale, uint8_t gScale, float tau, float dt);
